@@ -1831,7 +1831,7 @@ function filter_nat_rules_generate_if ($if, $descr = "", $ipprotocol = "", $src 
 			if (is_ipaddrv4($ifip)) {
 				$tgt4 = "{$ifip}/32";
 			} else {
-				$tgt4 = "(" . $FilterIflist[$if]['if'] . ")";
+				$tgt4 = ""; // interface has no ip to nat to.. rule will be skipped
 			}
 		}
 	}
@@ -1850,7 +1850,7 @@ function filter_nat_rules_generate_if ($if, $descr = "", $ipprotocol = "", $src 
 			if (is_ipaddrv6($ifip)) {
 				$tgt6 = "{$ifip}/128";
 			} else {
-				$tgt6 = "(" . $FilterIflist[$if]['if'] . ")";
+				$tgt6 = ""; // interface has no ip to nat to.. rule will be skipped
 			}
 		}
 	}
